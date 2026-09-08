@@ -3,6 +3,7 @@ from file_utils import open_file, delete_file
 from messenger import display_complaint_messages, send_message, get_recipient_id_for_complaint
 import os
 import hashlib
+from auth import hash_password
 
 def ask_yes_no(prompt, default=False):
     if default:
@@ -598,7 +599,7 @@ def add_worker():
         conn.close()
         return
     
-    password_hash = 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3'  # 123
+    password_hash = hash_password('123')  # 123- это пароль для нового созданного работника.
     
     cursor.execute("""
         INSERT INTO users (login, password_hash, role, first_name, last_name)

@@ -36,8 +36,8 @@ def register(login, password, first_name, last_name):
     password_hash = hash_password(password)
     cursor.execute("""
         INSERT INTO users (login, password_hash, role, first_name, last_name)
-        VALUES (?, ?, 'citizen', ?, ?)
-    """, (login, password_hash, first_name, last_name))
+        VALUES (?, ?, ?, ?, ?)
+    """, (login, password_hash, 'citizen', first_name, last_name))
     conn.commit()
     
     cursor.close()
