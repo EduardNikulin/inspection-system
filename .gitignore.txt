@@ -1,5 +1,0 @@
-Заявления БД/
-__pycache__/
-.idea/
-.vscode/
-*.pyc
